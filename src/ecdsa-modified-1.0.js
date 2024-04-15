@@ -882,12 +882,14 @@ KJUR.crypto.ECDSA.biRSSigToASN1Sig = function(biR, biS) {
  * KJUR.crypto.ECDSA.getName("P-521") &rarr; undefined // not supported
  */
 KJUR.crypto.ECDSA.getName = function(s) {
+    if (s === "2a811ccf5501822d") return "sm2p256v1"; // 1.2.156.10197.1.301
     if (s === "2b8104001f") return "secp192k1"; // 1.3.132.0.31
     if (s === "2a8648ce3d030107") return "secp256r1"; // 1.2.840.10045.3.1.7
     if (s === "2b8104000a") return "secp256k1"; // 1.3.132.0.10
     if (s === "2b81040021") return "secp224r1"; // 1.3.132.0.33
     if (s === "2b81040022") return "secp384r1"; // 1.3.132.0.34
 	if (s === "2b81040023") return "secp521r1"; // 1.3.132.0.35
+    if ("|sm2p256v1|GM P-256|".indexOf(s) !== -1) return "sm2p256v1";
     if ("|secp256r1|NIST P-256|P-256|prime256v1|".indexOf(s) !== -1) return "secp256r1";
     if ("|secp256k1|".indexOf(s) !== -1) return "secp256k1";
     if ("|secp224r1|NIST P-224|P-224|".indexOf(s) !== -1) return "secp224r1";
