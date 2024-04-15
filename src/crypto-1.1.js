@@ -1544,6 +1544,7 @@ KJUR.crypto.OID = new function() {
 	'2a864886f70d010101': 'rsaEncryption',
 	'2a8648ce3d0201': 'ecPublicKey',
 	'2a8648ce380401': 'dsa',
+	'2a811ccf5501822d': 'sm2p256v1', // 1.2.156.10197.1.301
 	'2a8648ce3d030107': 'secp256r1',
 	'2b8104001f': 'secp192k1',
 	'2b81040021': 'secp224r1',
